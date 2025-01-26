@@ -25,18 +25,18 @@ else:
     start_episode = int(args.old_model_name.split('/')[-1])
 
 
-if not args.debug:
-    wandb.init(
-        project="FaultTolerance",
-        config=args,
-        name=ex_name
-    )
-    arti_code = wandb.Artifact('algorithm', type='code')
-    arti_code.add_dir('/home/syc/Workspace/FaultTolerance/ftcode')
-    wandb.log_artifact(arti_code)
-    arti_code = wandb.Artifact('environment', type='code')
-    arti_code.add_dir('/home/syc/Workspace/FaultTolerance/mpe')
-    wandb.log_artifact(arti_code)
+# if not args.debug:
+#     wandb.init(
+#         project="FaultTolerance",
+#         config=args,
+#         name=ex_name
+#     )
+#     arti_code = wandb.Artifact('algorithm', type='code')
+#     arti_code.add_dir('/home/syc/Workspace/FaultTolerance/ftcode')
+#     wandb.log_artifact(arti_code)
+#     arti_code = wandb.Artifact('environment', type='code')
+#     arti_code.add_dir('/home/syc/Workspace/FaultTolerance/mpe')
+#     wandb.log_artifact(arti_code)
 
 cl_controller = make_cl(args.cl, args)
 
