@@ -1,6 +1,6 @@
-import gym
-from gym import spaces
-from gym.envs.registration import EnvSpec
+import gymnasium as gym
+from gymnasium import spaces
+from gymnasium.envs.registration import EnvSpec
 import numpy as np
 from mpe.multi_discrete import MultiDiscrete
 
@@ -236,14 +236,14 @@ class MultiAgentEnv(gym.Env):
             # create viewers (if necessary)
             if self.viewers[i] is None:
                 # import rendering only if we need it (and don't import for headless machines)
-                #from gym.envs.classic_control import rendering
+                #from gymnasium.envs.classic_control import rendering
                 from mpe import rendering
                 self.viewers[i] = rendering.Viewer(700,700)
 
         # create rendering geometry
         if self.render_geoms is None:
             # import rendering only if we need it (and don't import for headless machines)
-            #from gym.envs.classic_control import rendering
+            #from gymnasium.envs.classic_control import rendering
             from mpe import rendering
             self.render_geoms = []
             self.render_geoms_xform = []
