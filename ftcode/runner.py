@@ -71,8 +71,8 @@ def run(env, controller, fault_controller, start_episode, args):
     for episode_id in range(start_episode + 1, args.max_episode + 1):
         episode_metrics = run_episode(step_id, episode_id, env, controller, fault_controller, args, training_mode=True)
         episode_metrics_list.append(episode_metrics)
-        if not args.debug:
-            wandb.log(episode_metrics)
+        # if not args.debug:
+        #     wandb.log(episode_metrics)
         if episode_id % 20 == 0:
             local_print(episode_metrics_list)
 
